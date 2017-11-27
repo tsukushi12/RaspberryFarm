@@ -1,0 +1,20 @@
+<h1>Raspberry Farm</h1>
+<h2>名前の変更</h2>
+<%= @farm.name || @farm.key %>
+<%= form_tag farm_save_name_path, method: :post do %>
+  <%= hidden_field_tag :id, @farm.id %>
+  <%= text_field_tag(:name) %>
+  <%= submit_tag("登録") %>
+<% end %>
+
+<h2>給水ボタン</h2>
+<%= form_tag watering_path(@farm) do %>
+  <%= submit_tag("給水") %>
+<% end %>
+
+
+
+<h2>日記の作成</h2>
+<% @farm.status.each do |s| %>
+  <%= s.id %>
+<% end %>

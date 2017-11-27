@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  img: 
+  light: 1
+  temp: 1
+  humi: 1
+  soil_humi: 1
+  farm: one
+
+two:
+  img: 
+  light: 1
+  temp: 1
+  humi: 1
+  soil_humi: 1
+  farm: two

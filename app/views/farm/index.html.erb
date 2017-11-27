@@ -1,0 +1,15 @@
+<h1>Raspberry Farm</h1>
+<h2>鉢植えを登録</h2>
+<%= form_tag farm_associate_path, method: :post do %>
+  <%= text_field_tag(:key) %>
+  <%= submit_tag("登録") %>
+<% end %>
+
+
+<h2> 登録された鉢植え</h2>
+<% @user.farm.each do |f| %>
+  <%= link_to f.name || f.key, farm_path(f) %>
+  <%if f.status.last && f.status.last.img? %>
+    <%= image_tag f.status.last.img.url %>
+  <% end %>
+<% end %>
